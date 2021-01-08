@@ -1,0 +1,3 @@
+# ignore all stl and gcode files
+*.stl
+*.gcode
