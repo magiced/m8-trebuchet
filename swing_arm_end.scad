@@ -1,12 +1,12 @@
 box = 11;
 box_length = 30;
-stud_dia = 8.5;
+stud_dia = 8.2;
 stud_hole_length = box_length-3;
 flange_bolt_dia = 4.4;
 flange_dia = box;
 flange_thk = 3;
 flange_finger_width = 3;
-flange_length = 11;
+flange_length = 12;
 m8_clr_length = 8;
 m8_clr_width = 16;
 nut_gap_center = 13;

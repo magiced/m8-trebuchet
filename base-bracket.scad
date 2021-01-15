@@ -7,9 +7,9 @@ flange_width = 10;
 base_width = 17+flange_width*2;
 base_hole_centres = base_width - flange_width;
 base_depth = 5;
-screw_hole_dia = 4;
+screw_hole_dia = 4.5;
 csk_depth = 4;
-csk_dia = 7;
+csk_dia = 8;
 centre_height = 20;
 
 module csk_screw_hole(screw_dia, screw_depth, csk_dia, csk_depth)
