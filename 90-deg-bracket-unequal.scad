@@ -3,7 +3,7 @@ $fn = 25;
 stud_clear_dia = 8.5;
 washer_dia = 17;
 thk = washer_dia;
-wide_width = 50;
+wide_width = 52;
 
 module hollow_cylinder(id,od,height)
 {
