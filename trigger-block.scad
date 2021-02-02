@@ -9,7 +9,7 @@ w_hinge = 20;
 h_hinge = 20;
 d_hinge = d_block/2;
 
-y_pivot = 10;
+y_pivot = 15;
 x_pivot = 20;
 dia_pivot = 4.4;
 
@@ -22,9 +22,17 @@ h_cone = 4;
 tri_x = 5;
 tri_y = 5;
 
+//base dims
+thk_feet = 4;
+screw_hole_dia = 4.5;
+csk_depth = 4;
+csk_dia = 8;
+feet_centres = 45;
+d_feet = 15;
+
 
 //main block workplane
-translate([0,d_block,0])
+translate([0,d_block,thk_feet])
 rotate([90,0,0])
 {
 difference()
@@ -52,10 +60,38 @@ union()
     {
         triangle(tri_x,tri_y,d_block);
     }
-}
-    
-    //base
-    //base block
-    //screw holes
-    
+}    
 } //end of main block workplane
+
+translate([-7.5,-2.5,0])
+foot();
+
+module foot()
+    {
+        
+    difference()
+    {
+        //rounded foot shape
+        hull()
+        {
+            cylinder(d=d_feet,h=thk_feet);
+            translate([feet_centres,0,0])    
+                cylinder(d=d_feet,h=thk_feet);
+        }
+        //screw hole and countersinks
+        translate([0,0,thk_feet])
+            csk_screw_hole(screw_hole_dia,thk_feet,csk_dia,csk_depth);
+        translate([feet_centres,0,thk_feet])
+            csk_screw_hole(screw_hole_dia,thk_feet,csk_dia,csk_depth);
+    }
+}    
+    
+module csk_screw_hole(screw_dia, screw_depth, csk_dia, csk_depth)
+{
+    translate([0,0,-screw_depth])
+        cylinder(d=screw_dia,h=screw_depth);
+    
+    translate([0,0,-csk_depth])
+//        cylinder(d1=screw_dia,d2=csk_dia,csk_depth);
+        cylinder(d1=0,d2=csk_dia,csk_depth);
+}

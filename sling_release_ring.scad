@@ -1,8 +1,8 @@
 $fn=25;
 
-wall_thk = 1.5;
+wall_thk = 2.5;
 
-ring_id = 12;
+ring_id = 4.5;
 ring_od = ring_id + 2*wall_thk;
 
 string_hole_id = 2;
@@ -10,7 +10,7 @@ string_hole_od = string_hole_id + 2*wall_thk;
 
 
 thk = 1.5;
-hole_centres = 10;
+hole_centres = 8;
 
 difference()
 {
